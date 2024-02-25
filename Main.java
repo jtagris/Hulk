@@ -1,6 +1,7 @@
-interface BruceDanner {
+interface BruceDanner
+{
     
-    int SePresenter();
+    void SePresenter();
     BruceDanner MeetBetty();
     BruceDanner AvalerSubstance();
     String GetState();
@@ -13,13 +14,13 @@ interface BruceDanner {
     int ETAT_BETTY_PAS_LA = 0;
 }
 
-class BruceSain implements BruceDanner {
+class BruceSain implements BruceDanner 
+{
     private String etat = "ETAT_SAIN";
 
     @Override
-    public int SePresenter() {
+    public void SePresenter() {
         System.out.println("Salut, je suis Bruce Danner et je suis sain");
-        return 1;
     }
 
     @Override
@@ -46,10 +47,9 @@ class BruceContamine implements BruceDanner
     private String etat = "ETAT_CONTAMINE";
 
     @Override
-    public int SePresenter()
+    public void SePresenter()
         {
             System.out.println("je suis en fuite, je ne peut pas donner mon nom ou alors il faudrait que je vous tue aprés haha");
-            return 1;
         }
     
     @Override
@@ -77,10 +77,9 @@ class Hulk implements BruceDanner
     private String etat = "ETAT_HULK";
 
     @Override
-    public int SePresenter()
+    public void SePresenter()
         {
             System.out.println("GRRRROOOOOOOOOOOOoooooooooo");
-            return 1;
         }
     
     @Override
@@ -126,13 +125,13 @@ public class Main
 
         bruce1 = bruce1.MeetBetty();
         bruce1.SePresenter();
-        System.out.println("Je suis dans l'état : " + bruce1.GetState());               //BRuCE EST  
+        System.out.println("Je suis dans l'état : " + bruce1.GetState());               //BRuCE EST  HULK
 
         System.out.println("##############################################");
 
         bruce1 = bruce1.AvalerSubstance();
         bruce1.SePresenter();
-        System.out.println("Je suis dans l'état : " + bruce1.GetState()); 
+        System.out.println("Je suis dans l'état : " + bruce1.GetState());             //BRUCE EST SAIN 
 
         System.out.println("################### FIN #######################");
 
